@@ -7,7 +7,7 @@ class BookPrice:
 		self.promptInput()
 
 	def promptInput(self):
-		query = raw_input("Search your query: ")
+		query = raw_input("Search your query\n")
 		self.search(query)
 
 	def search(self, query):

@@ -4,14 +4,18 @@ from bs4 import BeautifulSoup as BS
 
 class BookPrice:
 	def __init__(self):
+		print("Welcome to DrEvans-'s Craiglist Parser!");
+		print("I will be adding more functionality as I progress.");
+		print("There may be some bugs, but don't fret, I am working on them!");
 		self.promptInput()
 
 	def promptInput(self):
+		city = raw_input("Your city (all lowercase!): ");
 		query = raw_input("Search your query: ")
-		self.search(query)
+		self.search(city, query)
 
-	def search(self, query):
-		site = "http://gainesville.craigslist.org/search/bka/"
+	def search(self, city, query):
+		site = "http://" + city + ".craigslist.org/search/bka/"
 		payload = {"query": query}
 		r = requests.get(site, params=payload)
 		print("URL for your query: " + r.url + "\n")
